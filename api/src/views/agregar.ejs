@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    
+    <div class="container">
+      <div class="row mb-5">
+        <h1 class="text-center"><u>Agregar Personaje</u></h1>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <div class="card">
+            <div class="card-body">
+
+              <form action="/agregar" method="POST">
+                <div class="form-group mb-3">
+                  <label for="selectEpisodios">Numero de episodio</label>
+                  <select name="episodio" class="form-select">
+                    <% episodios.forEach( (episodio, idx) => { %>
+                      <option value="<%= episodio %>"> <%= `${episodio}- ${nombres[idx]} ` %> </option>
+                    <% }) %>
+                  </select>
+                </div>
+                <div class="form-group mb-3">
+                  <label for="inputPersonaje">Nombre Personaje</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingresa Nombre">
+                </div>
+                <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary btn-lg" id="btnAgregarPersonaje">Agregar</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

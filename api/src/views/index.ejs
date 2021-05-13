@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <div class="container">
+      <div class="row mb-5">
+        <h1 class="text-center"><u>Episodios</u></h1>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <ol class="list-group list-group-numbered">
+            <% nombresEpisodios.forEach( (nombre, idx) => { %>
+              <li class="list-group-item"><a class="stretched-link" href="/listar/<%=idx+1%>" style="text-decoration: none;"><%= nombre %></a></li>
+            <% })  %>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

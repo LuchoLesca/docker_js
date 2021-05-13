@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+    <div class="container">
+      <div class="row mb-5">
+        <h1 class="text-center"><u>Personajes</u></h1>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-3">
+          <ul class="list-group">
+            <% personajes.forEach( personaje => { if(personaje !== "")%>
+              <li class="list-group-item"> <%= personaje %> </li>
+            <% }) %>
+          </ul>
+          <a href="/"><button class="btn btn-primary mt-3">Volver a Episodios</button></a>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
